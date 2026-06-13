@@ -1,0 +1,96 @@
+/* Цветовая палитра в стиле Steam */
+:root {
+    --bg-color: #1b2838;
+    --header-bg: #171a21;
+    --text-main: #c7d5e0;
+    --text-muted: #8f98a0;
+    --accent-blue: #66c0f4;
+    --card-bg: #2a475e;
+    --card-hover: #325c7a;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+}
+
+header {
+    background-color: var(--header-bg);
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-right: 40px;
+}
+
+nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+nav a:hover, nav a.active {
+    color: var(--accent-blue);
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h2 {
+    color: #ffffff;
+    font-weight: 300;
+    margin-bottom: 24px;
+}
+
+/* Адаптивная сетка */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 24px;
+}
+
+/* Карточка игры (Заглушка) */
+.game-card {
+    background-color: var(--card-bg);
+    border-radius: 4px;
+    /* Пропорции стандартного вертикального постера (600x900) */
+    aspect-ratio: 2 / 3; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    background-color: var(--card-hover);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+.placeholder-icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+    opacity: 0.5;
+}
+
+.placeholder-text {
+    color: var(--text-muted);
+    font-size: 14px;
+    text-align: center;
+}
